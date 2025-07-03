@@ -1,0 +1,10 @@
+/mini-project/
+│
+├── login.php 
+├── logout.php
+├── dashboard.php
+├── tambah.php
+├── edit.php
+├── hapus.php
+├── produk.json (opsional)
+└── functions.php

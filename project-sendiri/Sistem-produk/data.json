@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nama_produk": "Mie ayam",
+    "tipe": "makanan",
+    "harga": 14000
+  },
+  {
+    "id": 2,
+    "nama_produk": "Sepatu",
+    "tipe": "aksesoris",
+    "harga": 120000
+  },
+  {
+    "id": 3,
+    "nama_produk": "Kemeja",
+    "tipe": "aksesoris",
+    "harga": 35000
+  },
+  {
+    "id": 4,
+    "nama_produk": "Es teh",
+    "tipe": "minuman",
+    "harga": 12000
+  },
+  {
+    "id": 5,
+    "nama_produk": "Celana Jeans",
+    "tipe": "aksesoris",
+    "harga": 50000
+  }
+]

@@ -1,0 +1,21 @@
+Membuat aplikasi To-Do List
+
+Tugas - tugas ditambahkan oleh pengguna akan disimpan di dalam session sehingga tetap tersimpan selama sesi browser aktif. aplikasi
+ini juga memiliki fitur untuk menghapus tugas yang sudah ditambahkan, dengan menggunakan form yang tersembunyi di samping setiap
+tugas.
+
+Spesifiksi aplikasi
+1. Tampilan :
+    => Form input menambahkan tugas baru
+    => Setiap tugas yang ditambahkan akan tampil dalam bentuk daftar di halaman
+    => Di samping setiap tugas terdapat tombol "Hapus" untuk menghapus tugas tersebut.
+2. Fitur utama : 
+    => Saat pengguna memasukkan tugas baru ke dalam input dan mengklik tombol "tambah", tugas tersebut harus ditambahkan ke dalam
+    daftar tugas.
+    => Data tugas disimpan menggunakan session sehingga tugas - tugas tetap ada selama sesi browser masih aktif.
+    => Tugas - tugas dapat dihapus dari daftar dengan menekan tombol "hapus".
+    => Setelah tugas dihapus, daftar tugas harus menyesuaikan kembali secara otomatis tanpa meninggalkan celah (index) kosong diantara
+    tugas lainnya.
+3. Validasi :
+    => Tidak boleh ada tugas kosong yang dimasukkan. Jika pengguna mencoba menambahkan tugas tanpa teks, tugas tersebut tidak akan 
+    ditambahkan ke dalam daftar.

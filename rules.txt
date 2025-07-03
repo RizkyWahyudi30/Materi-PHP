@@ -1,0 +1,439 @@
+Rules Variable di PHP :
+1. Diawali dengan simbol $ 
+2. Harus dimulai dengan huruf atau underscore(_)
+3. Bersifat case-sensitive ($nama != $Nama)
+4. Tidak boleh mengandung spasi ($Pertama kedua)
+5. Tidak boleh menggunakan karakter khusus kecuali underscore
+6. Tidak boleh dimulai dengan angka ($1angka)
+
+Tipe data :
+1. String 
+2. Integer => angka bulat
+3. Float => angka desimal
+4. Boolean
+5. Array 
+6. Null
+-- cara mengecek tipe data di php --
+1. Menggunakan gettype() : mengembalikkan tipe data dari Variable
+2. Menggunakan var_dump() : menampilkan tipe data dan nilai dari Variable
+3. Menggunakan fungsi is_*() : mengecek tipe data tertentu
+    (bintang disini artinya bisa diisi dengan tipe data yang ingin kita cek)
+
+Penggabungan String (Concetenation) :
+1. Mennggunakan operator titik => dengan menambahkan string spasi diantaranya
+2. Menggunakan interpolasi String dengan tanda kutip ganda (")
+
+Pencarian String :
+proses menemukan posisi atau keberadaan substring didalam string utama
+1. Menggunakan strpos() => mencari posisi substring "(apa yang dicari)" di dalam $namaVariable dan mengembalikkan posisi pertama yang ditemukan
+2. Menggunakan strrpos() => mencari posisi terakhir substring "(apa yang dicari)" di dalam $namaVariable
+
+Fungsi String lain yang sering digunakan :
+ada fungsi untuk memanipulasi string, sepeerti mengganti, menghitung panjang, mengubah huruf besar/kecil, dan mengambil sebagian teks
+1. str_replace("target diubah", "objek ubah", $string) : digunakan untuk mengganti substring tertentu dalam sebuah string
+2. strlen($string) : menghitung panjang string.
+3. strtoupper($string) : mengubah seluruh huruf menjadi huruf besar
+4. strtolower($string) : mengubah seluruh huruf menjadi huruf kecil
+5. substr($string, start, length) : mengambil sebagian string 
+
+Operator aritmatika :
+1. Penjumlahan (+)
+2. Pengurangan (-)
+3. Perkalian (*)
+4. Pembagian (/)
+5. Modulus (%)
+6. Eksponensial (**)
+
+Operator perbandingan :
+1. Sama dengan (==) contohnya $a == $b
+2. Tidak sama dengan (!=) contohnya $a != $b
+3. Identik (===) contohnya $a === $b
+4. Tidak indentik (!==) contohnya $a !== $b
+5. Lebih besar dari (>) contohnya $a > $b
+6. Lebih kecil dari (<) contohnya $a < $b
+7. Lebih besar sama dengan (>=) $a >= $b
+8. Lebih kecil sama dengan (<=) $a <= $b
+
+Operator Logika :
+1. AND (&&) = mengembalikkan nilai true jika kedua operand bernilai true
+2. OR (||) = mengembalikkan true jika sudah satu operand bernilai true
+3. NOT (!) = mengembalikkan true jika operand bernilai false dan sebaliknya
+4. XOR (xor) = mengembalikkan true jika hanya satu operand yang bernilai true, 
+tetapi bukan keduanya
+
+Struktur Kontrol : untuk mengatur alur eksekusi kode berdasarkan kondisi tertentu. 
+Contohnya seperti conditional statements dan loops
+
+Contional Statements : ada beberapa jenis conditional statements :
+1. if 
+2. else 
+3. else if 
+4. switch case
+
+Loopings : untuk mengeksekusi blok kode berulang kali selama kondisi tertentu terpenuhi.
+1. While => mengeksekusi blok kode selama kondisi bernilai true
+2. do-while => mirip dengan while, tetapi blok kode akan dieksekusi setidaknya sekali, bahkan
+jika false
+3. for => digunakan ketika sudah tau sebelumnya berapa kali loop perlu dijalankan
+4. foreach => digunakan untuk mengulang setiap elemen dari array
+5. break => digunakan untuk eksekusi loop secara langsung, sehingga alur program akan keluar
+dari loop yang sedang berjalan
+6. continue => digunakan untuk melewatkan sisa kode dalam loop pada iterasi tertentu dan 
+langsung melanjutkan ke iterasi berikutnya
+
+Function di PHP : dirancang untuk melakukan tugas tertentu dan dapat dipanggil berulang kali
+dalam program.
+    => Parameter dalam fungsi
+    => Nilai kembalian (return)
+
+Array : Dalam PHP, array bisa didefinisikan dengan tanda kurung siku [] atau dengan array()
+Indeks dimulai dari 0;
+Dan ada juga namanya :
+== Array Asosiatif : yaitu array dengan key : value;
+
+dan juga 
+
+== Array Multidimensi : array yang memiliki array di dalamnya (atau bahasa lainnya 
+'array nested')
+
+Fungsi - fungsi Array : beberapa fungsi yang sering digunakan adalah :
+1. Sorting array (sort) : untuk mengurutkan array dalam bentuk numerik
+2. Menggabungkan array (array_merge)
+3. Menghitung jumlah elemen (count) 
+4. Mengecek Elemen di dalam array (in_array)
+
+============ UNTUK MELIHAT ARRAY DENGAN KODE : print_r($nama_array);
+
+
+// MULAI MASUK SERU NIEEEHH
+
+// Form Handling
+Mengambil data dari form HTML, data dikirim menggunakan metode GET atau POST
+
+contoh kode nya :
+-------------------------------------------------------------------------------------------
+-    <form action="proses.php" method="post">                                             -
+-        <label for="name">Nama: </label>                                                 -
+-        <input type="text" id="name" name="name">                                        -
+-                                                                                         -
+-        <label for="email">Email: </label>                                               -
+-        <input type="email" id="email" name="email">                                     -
+-                                                                                         -
+-        <input type="submit" value="kirim">                                              -
+-    </form>                                                                              -
+-------------------------------------------------------------------------------------------
+
+Kira kira seperti diatas contoh kode nya, form handling ada di tag form di atribute "method"
+
+PHP menyediakan dua cara untuk menangkap data dari form :
+1. $_GET    : mengambil data yang dikirimkan melalui URL (query string)
+2. $_POST   : mengambil data yang dikirimkan melalui body HTTP request
+
+// Contoh penggunaan $_GET : metode GET mengirimkan data dari URL
+-------------------------------------------------------------------------------------------
+-    HTML                                                                                 -
+-    <form action="proses.php" method="get">                                              -
+-        <label for="name">Nama: </label>                                                 -
+-        <input type="text" id="name" name="name">                                        -
+-        <input type="submit" value="kirim">                                              -                                                                                                        -                                            -
+-    </form>                                                                              -
+-------------------------------------------------------------------------------------------
+-    PHP                                                                                  -  
+-    <?php                                                                                -
+-    // menangkap data dari form tanpa isset dan htmlspesialchars                         -
+-    $name = $_GET['name'];                                                               -
+-                                                                                         -
+-    echo "Nama yang dikirim: " . $name;                                                  -                                                                                                        -                                            -
+-    ?>                                                                                   -
+-------------------------------------------------------------------------------------------
+
+// Contoh penggunaan $_POST : metode POST mengirimkan data melalui body HTTP, tidak muncul 
+di URL
+-------------------------------------------------------------------------------------------
+-    HTML                                                                                 -
+-    <form action="proses.php" method="post">                                             -
+-        <label for="name">Nama: </label>                                                 -
+-        <input type="text" id="name" name="name">                                        -
+-        <input type="submit" value="kirim">                                              -                                                                                                        -                                            -
+-    </form>                                                                              -
+-------------------------------------------------------------------------------------------
+-    PHP                                                                                  -  
+-    <?php                                                                                -
+-    // menangkap data dari form tanpa isset dan htmlspesialchars                         -
+-    $name = $_POST['name'];                                                              -
+-                                                                                         -
+-    echo "Nama yang dikirim: " . $name;                                                  -                                                                                                        -                                            -
+-    ?>                                                                                   -
+-------------------------------------------------------------------------------------------
+
+Penggunaannya :
+=> $_GET    : untuk pencarian, filter produk
+=> $_POST   : login, pendaftaran, form data besar
+
+// Validasi Form
+langkah validasi pada umumnya :
+1. Menghindari output kosong : memastikan agar user tidak meninggalkan field kosong
+2. Memeriksa format data : seperti email yang valid, panjang string, tipe data 
+
+// Menghindari input kosong : 
+PHP menyediakan dua cara untuk memeriksa input kosong :
+1. isset(): memeriksa apakah variable ada dan tidak bernilai null
+2. empty(): memeriksa apakah variable ada dan nilainya dianggap "kosong" (seperti 0, " ", 
+null, false, array, kosong, dll)
+=> contoh isset()
+-------------------------------------------------------------------------------------------
+-   // Cek apakah field "name" dikirim                                                    -      
+-   if (isset($_POST['name'])) {                                                          -
+-       $name = $_POST['name'];                                                           -
+-       echo "Nama yang dikirim: " . $name . "<br>";                                      -
+-   } else {                                                                              -
+-       $errors[] = "Field nama tidak ditemukan";                                         -
+-   }                                                                                     -
+-------------------------------------------------------------------------------------------
+: Gunakan isset() untuk memastikan bahwa data telah dikirim oleh form. Ini diperlukan untuk
+mencegah kesalahan ketika field tidak ada atau tidak dikirim
+
+=> contoh empty()
+-------------------------------------------------------------------------------------------
+-   // Cek apakah field "name" dikirim                                                    -      
+-   if (!empty($_POST['name'])) {                                                         -
+-       $name = $_POST['name'];                                                           -
+-       echo "Nama: " . $name . "<br>";                                                   -
+-   } else {                                                                              -
+-       $errors[] = "Nama tidak boleh kosong";                                            -
+-   }                                                                                     -
+-------------------------------------------------------------------------------------------
+: Gunakan empty() untuk memeriksa apakah input kosong setelah data dikirim, biasanya untuk
+validasi lebih lanjut (seperti memastikan field wajib diisi)
+
+// Memeriksa format data :
+PHP menyediakan berbagai macam filter bawaan melalui Filter Functions yang digunakan untuk
+memvalidasi dan mensanitasi data. Misal FILTER_VALIDATE_EMAIL => memeriksa apakah sebuah string
+sesuai dengan format email yang valid
+-------------------------------------------------------------------------------------------
+-   php                                                                                   -
+-   if (!filter_var($_POST['email], FILTER_VALIDATE_EMAIL)) {                             -
+-       $errors[] = "format email tidak valid.";                                          -
+-   }                                                                                     -
+-------------------------------------------------------------------------------------------
+
+// Mencagah XSS :
+Mengggunakan fungsi htmlspesialchars() untuk memastikan bahwa input dari pengguna tidak dapat 
+digunakan untuk menyisipkan kode HTML atau Javascript berbahaya
+-------------------------------------------------------------------------------------------
+-   php                                                                                   -
+-   <?php                                                                                 -
+-   if ($_SERVER["REQUEST_METHOD"] == "POST") {                                           -
+-       $name = htmlspesialchars($_POST['name']);                                         -
+-       $email = htmlspesialchars($_POST['email'])                                        -
+-                                                                                         -
+-       echo "Nama: " . $name . "<br>";                                                   -
+-       echo "Email: " . $email;                                                          -
+-   }                                                                                     -
+-------------------------------------------------------------------------------------------
+
+=> contoh XSS
+-------------------------------------------------------------------------------------------
+-   Javascript                                                                            -
+-   Nama: <script>alert('Anda telah diretas');</script>                                   -
+-------------------------------------------------------------------------------------------
+
+
+
+// INCLUDE DAN REQUIRE :
+Include dan require adalah dua fungsi yang digunakan untuk menyertakan file lain ke dalam sebuah file PHP. Keduanya sangat berguna
+untuk mengorganisir kode menjadi bagian - bagian yang lebih kecil dan dapat digunakan kembali
+Seperti : header, footer, koneksi database, atau bagian lain dari halaman web 
+
+Penggunaan include :
+-------------------------------------------------------------------------------------------
+-   <?php                                                                                 -
+-   // file.php                                                                           -
+-   echo "Ini adalah kontenn dari file utama";                                            -
+-                                                                                         -
+-   // Menyertakan file header.php                                                        -
+-   include "header.php"; // jika file tidak ada,                                         -
+-                                                                                         -
+-   echo "konten setelah include.<br>";                                                   -
+-   ?>                                                                                    -
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+-   <?php                                                                                 -
+-   ehco "ini adalah header.<br>";                                                        -
+-   ?>                                                                                    -
+-------------------------------------------------------------------------------------------
+
+Penggunaan require :
+-------------------------------------------------------------------------------------------
+-   <?php                                                                                 -
+-   // file.php                                                                           -
+-   echo "ini adalah konten dari file utama.<br>";                                        -
+-                                                                                         -
+-   // menyertakan file config.php                                                        -
+-   require "config.php"; // jika file tidak ada, skrip akan berhenti                     -
+-                                                                                         -
+-   echo "konten setelah require.<br>"; // tidak akan di eksekusi                         -
+-   ?>                                                                                    -
+-------------------------------------------------------------------------------------------
+
+
+
+// COOKIES / COOKIE :
+file yang disimpan di perangkat pengguna
+
+Cara membuat cookie di PHP dengan setCookie() :
+-------------------------------------------------------------------------------------------
+-   php                                                                                   -
+-   setCookie("nama_cookie", "nilai_cookie", time() + (86400 * 30), "/");                 -
+-------------------------------------------------------------------------------------------
+
+penjelasan :
+->  "nama_cookie" : nama coookie nya.
+->  "nilai_cookie" : nilai yang disimpan dalam cookie.
+->  time() + (86400 * 30) : masa berlaku cookie(30 hari dalam contoh ini)
+->  "/" : path dimana cookie akan tersedia
+
+Mengambil nilai cookie dengan variable global $_COOKIE :
+-------------------------------------------------------------------------------------------
+-   php                                                                                   -
+-   if (isset($_COOKIE['nama_cookie])) {                                                  -
+-       echo $_COOKIE['nama_cookie];                                                      -
+-   } else {                                                                              -
+-       echo "cookie tidak ditemukan";                                                    -
+-   }                                                                                     -
+-------------------------------------------------------------------------------------------
+
+Menghapus cookie, bisa atur masa berlaku cookie ke waktu yang telah lewat :
+-------------------------------------------------------------------------------------------
+-   php                                                                                   -
+-   setCookie("nama_cookie", "", time() - 3600, "/);                                      -
+-------------------------------------------------------------------------------------------
+
+Sessions : 
+mekanisme penyimpanan data di server untuk pengguna yang sedang mengunjugi website. Data session disimpan di server, dan setiap
+pengguna memiliki ID Sesi yang unik
+
+Kegunaannya :
+1. menyimpan data login pengguna
+2. membuat keranjang belanja dalam aplikasi e-commerce
+3. mengelola informasi pengguna sementara 
+
+Memulai session :
+harus memulainya dengan session_start();
+-------------------------------------------------------------------------------------------
+-   session_start();                                                                      -
+-------------------------------------------------------------------------------------------
+
+Menyimpan data ke session : 
+-------------------------------------------------------------------------------------------
+-   session_start();                                                                      -
+-   $_SESSION['nama_pengguna'] = "Jhon Doe";                                              -
+-------------------------------------------------------------------------------------------
+
+Mengambil data dari session :
+-------------------------------------------------------------------------------------------
+-   php                                                                                   -
+-   if (isset($_SESSION['nama_pengguna'])) {                                              -
+-       echo $_SESSION['nama_pengguna'];                                                  -
+-   }                                                                     -               -
+-------------------------------------------------------------------------------------------
+
+Menghapus data dari session :
+menghapus satu data dari sesson
+-------------------------------------------------------------------------------------------
+-   unset($_SESSION['nama_pengguna'])                                                     -
+-------------------------------------------------------------------------------------------
+
+mengahkiri seluruh session :
+-------------------------------------------------------------------------------------------
+-   session_destroy()                                                                     -
+-   $_SESSION=[];                                                                         -
+-------------------------------------------------------------------------------------------
+
+
+
+$_SERVER :
+Variasi global di PHP yang merupakan array berisi informasi tentang server, lingkungan dan skrip yang sedang berjalan.
+$_SERVER mengandung berbagai jenis informasi.
+Ini sangat berguna untuk mengetahui informasi yang berhubungan dengan server dan request yang diterima oleh server dari browser
+
+Elemen yang sering digunakan dengan $_SERVER :
+->  $_SERVER['PHP_SELF']            : menyimpan path file saat ini relatif terhadap root. Berguna untuk menentukan lokasi file
+->  $_SERVER['SERVER_NAME']         : menyimpan nama host server tempat script dijalankan, seperti localhost / domain
+->  $_SERVER['HTTP_HOST']           : menyimpan header host dari permintaan HTTP, biasanya berisi nama domain atau alamat IP
+->  $_SERVER['HTTP_USER-AGENT']     : menyimpan informasi browser atau sistem operasi yang digunakan oleh pengguna
+->  $_SERVER['SCRIPT_NAME']         : menyimpan path script yang sedang dijalankan. Berguna untuk menciptakan URL dinamis
+->  $_SERVER['REQUEST_METHOD']      : menyimpan method HTTP yang digunakan untuk mengakses halaman, seperti GET / POST
+->  $_SERVER['REMOTE_ADDR']         : menyimpan alamat ip pengguna yang mengakses halaman
+->  $_SERVER['SERVER_PROTOCOL']     : menyimpan protokol yang digunakan, seperti HTTP/1.1 tau HTTP/2.0
+->  $_SERVER['REQUEST_TIME']        : menyimpan timestamp (waktu unix) saat permitaan dimulai
+->  $_SERVER['QUERY_STRING']        : menyimpan query string dari URL, jika ada parameter yang dikirimkan melalui URL
+->  $_SERVER['HTTPS']               : menyimpan informasi apakah halaman diakses melalui HTTPS
+
+
+=> 1. $_POST = array superglobal di PHP yang berisi data yang dikirim dari form HTML dengan method="post"
+=> 2. $_SESSION = array superglobal yang menyimpan data di server dan tetep tersedia selama sesi pengguna masih aktif
+=> 3. $_SERVER = array superglobal yang berisi informasi tentang server, script yang berjalan, dan request pengguna.
+
+
+ERROR HEANDLING : error di PHP dibagi menjadi beberapa, yaitu :
+1. Notice (pemberitahuan) : kesalahan kecil, skrip akan tetap berjalan. Contohnya :
+-------------------------------------------------------------------------------------------
+-   <?php                                                                                 -
+-   $num = 5;                                                                             -
+-   echo $number; // notice, variable belum terdefinisi                                   -
+-   ?>                                                                                    - 
+-------------------------------------------------------------------------------------------
+
+2. Warning (peringatan) : peringatan lebih serius dari notice, skrip juga akan tetap berjalan. ini menandakan masalah potensial
+-------------------------------------------------------------------------------------------
+-   <?php                                                                                 -
+-   include("file_tidak_ada.php"); // warning: gagal membuka file                         -
+-   echo "skrip akan tetap berjalan";                                                     -
+-   ?>                                                                                    -
+-------------------------------------------------------------------------------------------
+
+3. Fatal error (fatar error) : fatal, hingga memberhentikan skrip
+
+Dapat ditangani dengan try-catch dan exception
+=> Struktur try-catch :
+try: blok kode yang menimbulkan pengecualian (exception)
+catch: blok kode yang menangkap dan menangani pengecualian (exception)
+-------------------------------------------------------------------------------------------
+-   <?php                                                                                 -
+-   function bagi($pembilang, $penyebut) {                                                -
+-       if ($penyebut == 0) {                                                             -
+-           throw new Exception("Pembagian dengan nol tidak diperbolehkan");              -
+-       }                                                                                 -
+-       return $pembilang / $penyebut;                                                    -
+-   }                                                                                     -
+-                                                                                         -
+-   try {                                                                                 -
+-       echo bagi (10,0)                                                                  -
+-   } catch (Exception $e) {                                                              -
+-       echo "Pengecualian ditangkap: ", $e->getMessage(), "\n";                          -
+-   }                                                                                     -
+-   ?>                                                                                    -
+-------------------------------------------------------------------------------------------
+
+Apa maskud dari $e ?
+$e adalah variable yang mewakili objek pengecualian (exception) yang dilempar oleh PHP dalam blok catch ketika terjadi pengecualian.
+Kita dapat mengakses pengecualian nya dengan:
+=> getMessage(): mengembalikkan pesan kesalahan
+=> getCode(): mengembalikkan kode kesalahan (jika ada)
+=> getFile(): mengembalikkan nama file dimana pengecualian terjadi
+=> getLine(): mengembalikkan nomor baris dimana pengecualian terjadi
+
+=> Dengan blok Finally
+finally digunakan ketika ingin mengeksekusi bagian kode tertentu tanpa peduli apakah pengecualian dilempar atau Tidak
+-------------------------------------------------------------------------------------------
+-   try {                                                                                 -
+-       echo "coba menjalankan kode\n";                                                   -
+-       throw new Exception("kesalahan terjadi");                                         -
+-   } catch (Exception $e) {                                                              -
+-       echo "Pengecualian ditangkap: " . $e->getMessage(), "\n";                         -
+-   } finally {                                                                           -
+-       echo "ini akan selalu dijalankan, baik ada pengecualian atau tidak.\n"            -
+-   }                                                                                     -
+-------------------------------------------------------------------------------------------

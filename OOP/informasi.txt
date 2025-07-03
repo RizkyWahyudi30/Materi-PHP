@@ -1,0 +1,17 @@
+OOP (Object Oriented Programming) : paradigma pemrograman yang menggunakan "kelas" dan "objek" untuk memodelkan dan mengorgarnisir
+kode program. Setiap projek memiliki data(disebut properties) dan perilaku (disebut methods -> bisa berupa function)
+
+PHP mendukung OOP dengan menyediakan fitur untuk untuk mendefinisikan dan menggunakan kelas, objek, perwarisan (inheritance), 
+polimorfisme
+
+Konsep konsep OOP :
+1. Class dan Object: Konsep dasar OOP
+Class: blueprint atau template untuk membuat objek. Class mendefinisikan data data dan perilaku yang dimiliki oleh semua objek yang dibuat
+dari kelas
+
+Object: objek spesifik yang dibuat dari kelas. Objek tersebut mewarisi semua properties dan methods dari class tersebut
+
+2. Access Modifiers: Public, Protected, Private 
+Public: dapat diakses darimana saja
+Protected: hanya bisa diakses oleh class itu sendiri dan class turunannya(subclass)
+Private: hanya bisa diakses oleh class itu sendiri
