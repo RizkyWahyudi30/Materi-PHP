@@ -6,7 +6,8 @@ polimorfisme
 
 Konsep konsep OOP :
 1. Class dan Object: Konsep dasar OOP
-Class: blueprint atau template untuk membuat objek. Class mendefinisikan data data dan perilaku yang dimiliki oleh semua objek yang dibuat
+Class: blueprint atau template untuk membuat objek. Class mendefinisikan data data dan perilaku yang dimiliki oleh semua objek yang 
+dibuat
 dari kelas
 
 Object: objek spesifik yang dibuat dari kelas. Objek tersebut mewarisi semua properties dan methods dari class tersebut
@@ -15,3 +16,33 @@ Object: objek spesifik yang dibuat dari kelas. Objek tersebut mewarisi semua pro
 Public: dapat diakses darimana saja
 Protected: hanya bisa diakses oleh class itu sendiri dan class turunannya(subclass)
 Private: hanya bisa diakses oleh class itu sendiri
+
+3. Constructor dan Destructor 
+Constructor: adalah method khusus yang dijalankan otomatis ketika objek dari class dibuat. Biasanya digunakan untuk menginisialisasi
+properties
+
+Destructor: adalah method yang dijalankan ketika objek dihapus atau skrip selesai 
+
+4. Inheritance 
+Inheritance memungkinkan sebuah class untuk mewarisi properties dan methods dari class lain. Class yang mewarisi disebut subclass, 
+sedangkan
+class yang diwarisi disebut parent class
+
+Biasanya untuk menggabungkan menggunakan "extends"
+
+5. Polymorphism dan Method Overriding
+Polymorphism: kemampuan objek dari berbagai class untuk merespon panggilan method yang sama dengan cara yang berbeda
+
+Method overriding: subclass dapat menimpa method yang ada di parent class.
+
+6. Abstract Class
+yaitu: class yang tidak bisa di-instansiasi, dan dapat memiliki method yang tidak diimplementasikan (harus diimplementasikan oleh 
+subclass)
+
+7. Interface 
+yaitu: kumpulan method yang harus diimplementasikan oleh class yang "mengimplementasikan" Interface tersebut.
+
+Untuk membuatnya kita bisa memakai "Interface" dan untuk mengimplementasikan nya "implements"
+
+8. Traits di PHP
+Trait adalah mekanisme untuk meminjam method ke beberapa class. Traits memungkinkan rause kode tanpa menggunakan perwarisan
